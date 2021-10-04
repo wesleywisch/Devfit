@@ -1,7 +1,7 @@
 import { StackActions, NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
 
-function PagePreload(props) {
+function PreloadPage(props) {
   props.navigation.dispatch(
     StackActions.reset({
       index: 0,
@@ -36,4 +36,4 @@ function mapStateToProps(state) {
   };
 }
 
-export const Preload = connect(mapStateToProps)(PagePreload);
+export const Preload = connect(mapStateToProps)(PreloadPage);
