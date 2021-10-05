@@ -5,6 +5,7 @@ export const Container = styled.SafeAreaView`
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  padding: 0 30px;
 `;
 
 export const WelcomeText = styled.Text`
@@ -25,7 +26,6 @@ export const WelcomeLogo = styled.Image`
 
 export const BeginConfigArea = styled.View`
   width: 100%;
-  align-items: center;
   margin-bottom: 50px;
 `;
 

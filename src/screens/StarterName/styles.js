@@ -4,6 +4,7 @@ export const Container = styled.SafeAreaView`
   flex: 1;
   align-items: center;
   background-color: #fff;
+  padding: 0 30px;
 `;
 
 export const HeaderText = styled.Text`
@@ -14,7 +15,7 @@ export const HeaderText = styled.Text`
 
 export const NameInput = styled.TextInput`
   border: 1px solid #ccc;
-  width: 85%;
+  width: 100%;
   height: 50px;
   border-radius: 10px;
   font-size: 16px;

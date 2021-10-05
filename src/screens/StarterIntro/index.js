@@ -26,7 +26,7 @@ export function StarterIntro(props) {
 
       <BeginConfigArea>
         <DefaultButton
-          width="85%"
+          width="100%"
           bgColor="#0072c0"
           underlayColor="#0b7ac6"
           onPress={handleStart}>
