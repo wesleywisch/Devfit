@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import {
@@ -16,6 +16,10 @@ import { HomeDaysScroll } from '../../components/HomeDaysScroll';
 import { HomeDayStatus } from '../../components/HomeDayStatus';
 
 function HomePage(props) {
+  let today = new Date();
+
+  const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
+
   let legends = [
     { name: 'Hoje', color: '#b5eeff' },
     { name: 'Treino feito', color: '#b5ffb8' },
@@ -26,7 +30,10 @@ function HomePage(props) {
 
   return (
     <HomeContainer>
-      <HomeMonthScroll />
+      <HomeMonthScroll
+        selectedMonth={selectedMonth}
+        setSelectedMonth={setSelectedMonth}
+      />
       <HomeDaysScroll />
       <HomeDayStatus />
 
