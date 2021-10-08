@@ -39,9 +39,9 @@ export function Day({ day, month, dailyProgress, workoutDays, onPress, dayW }) {
       thisMonth = thisMonth < 10 ? '0' + thisMonth : thisMonth;
       thisDay = thisDay < 10 ? '0' + thisDay : thisDay;
 
-      let dayFormated = `${thisYear}-${thisMonth}-${thisDay}`;
+      let dateFormated = `${thisYear}-${thisMonth}-${thisDay}`;
 
-      if (dailyProgress.includes(dayFormated)) {
+      if (dailyProgress.includes(dateFormated)) {
         bgColor = '#b5ffb8'; // treinou
       } else {
         bgColor = '#ffb5b5'; // não treinou
