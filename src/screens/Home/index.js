@@ -53,9 +53,6 @@ function HomePage(props) {
         goToWorkout={() => props.navigation.navigate('WorkoutStack')}
       />
 
-      <LegendText>Mês: {selectedMonth}</LegendText>
-      <LegendText>dia: {selectedDay}</LegendText>
-
       <Legend>
         <LegendText>Legenda:</LegendText>
         {legends.map((item, key) => (
