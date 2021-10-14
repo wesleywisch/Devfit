@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const TabBarArea = styled.SafeAreaView`
   flex-direction: row;
-  background-color: #eee;
+  background-color: #ccc;
 `;
 
 export const TabBarItem = styled.View`

@@ -2,7 +2,8 @@ import styled from 'styled-components/native';
 
 export const HomeConfigContainer = styled.SafeAreaView`
   flex: 1;
-  margin: 0 30px;
+  background-color: #fff;
+  padding: 0 30px;
 `;
 
 export const Label = styled.Text`
@@ -31,7 +32,7 @@ export const DayItem = styled.TouchableHighlight`
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background-color: #ccc;
+  background-color: #eee;
   justify-content: center;
   align-items: center;
 `;
@@ -39,7 +40,7 @@ export const DayItem = styled.TouchableHighlight`
 export const DayItemText = styled.Text``;
 
 export const LevelItem = styled.TouchableHighlight`
-  background-color: #ccc;
+  background-color: #eee;
   height: 30px;
   padding: 0 15px;
   border-radius: 5px;

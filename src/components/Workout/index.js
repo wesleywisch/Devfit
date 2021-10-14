@@ -14,7 +14,12 @@ import {
 
 import { useMuscleImage } from './useMuscleImage';
 
-export function Workout({ data, handleAddAction }) {
+export function Workout({
+  data,
+  handleAddAction,
+  handleEditAction,
+  handleDelAction,
+}) {
   const [included, setIncluded] = useState(false);
 
   let muscleGroups = [];
@@ -28,6 +33,14 @@ export function Workout({ data, handleAddAction }) {
   function handleAddWorkout() {
     setIncluded(!included);
     handleAddAction();
+  }
+
+  function handleEditWorkout() {
+    handleEditAction();
+  }
+
+  function handleDelWorkout() {
+    handleDelAction();
   }
 
   return (
@@ -44,17 +57,39 @@ export function Workout({ data, handleAddAction }) {
       </WorkoutInfo>
 
       <WorkoutActions>
-        <WorkoutButton
-          onPress={() => handleAddWorkout()}
-          underlayColor="transparent">
-          <WorkoutButtonImage
-            source={
-              included
-                ? require('../../assets/check-black.png')
-                : require('../../assets/add.png')
-            }
-          />
-        </WorkoutButton>
+        {handleAddAction && (
+          <WorkoutButton
+            onPress={() => handleAddWorkout()}
+            underlayColor="transparent">
+            <WorkoutButtonImage
+              source={
+                included
+                  ? require('../../assets/check-black.png')
+                  : require('../../assets/add.png')
+              }
+            />
+          </WorkoutButton>
+        )}
+
+        {handleEditAction && (
+          <WorkoutButton
+            onPress={() => handleEditWorkout()}
+            underlayColor="transparent">
+            <WorkoutButtonImage
+              source={require('../../assets/edit-black.png')}
+            />
+          </WorkoutButton>
+        )}
+
+        {handleDelAction && (
+          <WorkoutButton
+            onPress={() => handleDelWorkout()}
+            underlayColor="transparent">
+            <WorkoutButtonImage
+              source={require('../../assets/trash-black.png')}
+            />
+          </WorkoutButton>
+        )}
       </WorkoutActions>
     </WorkoutContainer>
   );
