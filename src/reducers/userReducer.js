@@ -32,6 +32,16 @@ export function userReducer(state = initialState, action) {
       return { ...state, myWorkouts };
       break;
 
+    case 'EDIT_WORKOUT':
+      let index = myWorkouts.findIndex(i => i.id === action.payload.workout.id);
+
+      if (index > -1) {
+        myWorkouts[index] = action.payload.workout;
+      }
+
+      return { ...state, myWorkouts };
+      break;
+
     case 'DEL_WORKOUT':
       myWorkouts = myWorkouts.filter(i => i.id !== action.payload.workout.id);
       return { ...state, myWorkouts };
