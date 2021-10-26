@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-alert */
 import React from 'react';
+import { StackActions, NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
 
 import {
@@ -12,6 +13,7 @@ import {
   DayItemText,
   LevelItem,
   LevelItemText,
+  ResetButton,
 } from './styles';
 
 function HomeConfigPage(props) {
@@ -45,6 +47,15 @@ function HomeConfigPage(props) {
     }
 
     props.setWorkoutDays(newWorkoutDays);
+  }
+
+  function resetAction() {
+    props.reset();
+    const resetAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: 'StarterStack' })],
+    });
+    props.navigation.dispatch(resetAction);
   }
 
   return (
@@ -83,6 +94,9 @@ function HomeConfigPage(props) {
           </LevelItem>
         ))}
       </ListArea>
+
+      <Label>Você quer resetar tudo?</Label>
+      <ResetButton title="Resetar tudo" onPress={resetAction} />
     </HomeConfigContainer>
   );
 }
@@ -107,6 +121,7 @@ function mapDispatchToProps(dispatch) {
     setWorkoutDays: workoutDays =>
       dispatch({ type: 'SET_WORKOUTDAYS', payload: { workoutDays } }),
     setLevel: level => dispatch({ type: 'SET_LEVEL', payload: { level } }),
+    reset: () => dispatch({ type: 'RESET' }),
   };
 }
 

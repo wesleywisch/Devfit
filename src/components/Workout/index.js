@@ -19,6 +19,7 @@ export function Workout({
   handleAddAction,
   handleEditAction,
   handleDelAction,
+  handleGoAction,
 }) {
   const [included, setIncluded] = useState(false);
 
@@ -41,6 +42,10 @@ export function Workout({
 
   function handleDelWorkout() {
     handleDelAction();
+  }
+
+  function handleGoWorkout() {
+    handleGoAction();
   }
 
   return (
@@ -87,6 +92,16 @@ export function Workout({
             underlayColor="transparent">
             <WorkoutButtonImage
               source={require('../../assets/trash-black.png')}
+            />
+          </WorkoutButton>
+        )}
+
+        {handleGoAction && (
+          <WorkoutButton
+            onPress={() => handleGoWorkout()}
+            underlayColor="transparent">
+            <WorkoutButtonImage
+              source={require('../../assets/play-black.png')}
             />
           </WorkoutButton>
         )}

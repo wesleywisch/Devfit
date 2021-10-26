@@ -58,6 +58,10 @@ export function userReducer(state = initialState, action) {
       dailyProgress = dailyProgress.filter(i => i !== action.payload.date);
       return { ...state, dailyProgress };
       break;
+
+    case 'RESET':
+      return initialState;
+      break;
   }
 
   return state;

@@ -49,3 +49,5 @@ export const LevelItem = styled.TouchableHighlight`
 `;
 
 export const LevelItemText = styled.Text``;
+
+export const ResetButton = styled.Button``;
