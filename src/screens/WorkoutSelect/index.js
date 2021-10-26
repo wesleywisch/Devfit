@@ -3,17 +3,32 @@ import { connect } from 'react-redux';
 import { HeaderBackButton } from 'react-navigation-stack';
 import { StackActions, NavigationActions } from 'react-navigation';
 
-import { WorkoutSelectContainer, WorkoutList } from './styles';
+import { WorkoutSelectContainer, WorkoutList, Title } from './styles';
 
 import { Workout } from '../../components/Workout';
 
 function WorkoutSelectPage(props) {
+  let lastWorkout = false;
+
+  if (props.lastWorkout) {
+    lastWorkout = props.myWorkouts.find(i => i.id === props.lastWorkout);
+  }
+
   function goWorkout(workout) {
     props.navigation.navigate('WorkoutChecklist', { workout });
   }
 
   return (
     <WorkoutSelectContainer>
+      {lastWorkout && (
+        <>
+          <Title>Seu ultimo treino foi:</Title>
+          <Workout data={lastWorkout} />
+        </>
+      )}
+
+      <Title>Escolha seu treino de hoje:</Title>
+
       <WorkoutList
         data={props.myWorkouts}
         renderItem={({ item }) => (
@@ -42,6 +57,7 @@ WorkoutSelectPage.navigationOptions = ({ navigation }) => {
 
 function mapStateToProps(state) {
   return {
+    lastWorkout: state.userReducer.lastWorkout,
     myWorkouts: state.userReducer.myWorkouts,
   };
 }
