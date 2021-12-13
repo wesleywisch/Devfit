@@ -6,7 +6,7 @@
   <h2 id="sobre"> 📋 Sobre o projeto</h2>
 
 <p>
-Projeto DevFit realizando durante do curso do B7web que é um projeto de treino, que você pode colocar os dias que você realiza treinar e mais tbm você consegue colocar quantos treinos você deseja treinar, pode adicionar mais, criar os seus proprios treinos.
+Projeto DevFit realizando durante do curso do B7web que é um aplicativo de treino, que você pode colocar os dias que você realiza treinar e mais tbm você consegue colocar quantos treinos você deseja treinar, pode adicionar mais, criar os seus proprios treinos.
 </p>
 
 
